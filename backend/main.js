@@ -103,3 +103,5 @@ for (const cursor of cursorArray) {
 }
 
 const results = await Promise.all(cursorsToFetch.map(fn => fn()))
+
+export {cursorGen, fetchado}
