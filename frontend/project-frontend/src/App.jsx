@@ -1,5 +1,5 @@
 import React from "react";
-import Saludos from "./components/Saludos";
+import Pagination from "./components/Pagination";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
           </ul>
         </nav>
       </header>
-      <Saludos firstName="Leonardo"/>
+      <Pagination />
     </>
   );
 }
