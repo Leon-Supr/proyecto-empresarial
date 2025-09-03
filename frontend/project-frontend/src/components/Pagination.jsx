@@ -1,24 +1,39 @@
 // import { useEffect, useState } from "react";
 
-import React from 'react'
-import { useEffect } from 'react'
-import { useState } from 'react'
+import { useEffect, useState } from "react";
 
 const Pagination = () => {
-  const [pages, setPages] = useState([])
+  const [pages, setPages] = useState([]);
 
-  useEffect(()=>{
-    fetch("http://localhost:8000/search?num=5")
-    .then(res => res.json())
-    .then(data => setPages(data))
-    .catch(err => console.error("Error:", err))
-  }, [])
+  useEffect(() => {
+    fetch("http://localhost:8000/search?num=6")
+      .then((res) => res.json())
+      .then((data) => setPages(data))
+      .catch((err) => console.error("Error:", err));
+  }, []);
+
+  console.log("Esto es el pages");
+  console.log(Array.isArray(pages));
+
+  console.log(pages);
 
   return (
     <div>
-      {pages}
+      {pages.map((page, pageIndex) => (
+        <div className="container flex flex-col items-center" key={pageIndex}>
+          <h3 className="text-2xl font-bold">Resultados de página {pageIndex + 1}</h3>
+          <ol className="list-decimal">
+            {page.map((item, itemIndex) => (
+              <li key={itemIndex}>
+                {item.nombrePublicacion} → {item.decodedId}
+              </li>
+            ))}
+          </ol>
+          <br />
+        </div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default Pagination
+export default Pagination;

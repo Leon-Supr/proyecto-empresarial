@@ -17,7 +17,7 @@ const cursorGen = (num) => {
   return cursorArray
 }
 
-async function fetchado(inputCursor) {
+async function fetchado(inputCursor) { // Es la función principal, con esta se hará el fetch del cursor que se ingrese
   const cursor1 = "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxOCwidmVyc2lvbiI6MX0=" // Paginado 2
   const _cursor2 = "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjozNiwidmVyc2lvbiI6MX0=" // Paginado 3
   const _cursorExperimental = "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjowLCJ2ZXJzaW9uIjoxfQ" // Experimento poniendo offset 0
@@ -69,10 +69,12 @@ async function fetchado(inputCursor) {
       const encodedId = publicaciones[key].demandStayListing.id
       const decodedId = atob(encodedId).replace("DemandStayListing:", "")
       decodedIdsArray.push(decodedId)
-      pagina.push(key + " -> " + nombrePublicacion + " --> " + decodedId);
-      console.log(pagina[key]);
+      //pagina.push(key + " -> " + nombrePublicacion + " --> " + decodedId);
+      console.log(key + " -> " + nombrePublicacion + " --> " + decodedId) //Esto era un pagina.push
+      pagina.push({ nombrePublicacion, decodedId })
     }
   }
+
 
   for (let i = 0; i < pagina.length; i++) {
     for (let j = 0; j < ids.length; j++) {
@@ -82,26 +84,14 @@ async function fetchado(inputCursor) {
     }
   }
 
+
   const JSONToFile = (obj, filename) =>
     writeFileSync(`${filename}.json`, JSON.stringify(obj, null, 2));
 
   JSONToFile(data, './response');
+
+
+  return pagina
 }
 
-
-const cursorArray = cursorGen(10);
-// let i = 1;
-// for(const cursor of cursorArray){
-//   console.log(`\nPágina ${i}:\n`);
-//   await fetchado(cursor)
-//   i++
-// }
-
-const cursorsToFetch = []
-for (const cursor of cursorArray) {
-  cursorsToFetch.push(() => fetchado(cursor))
-}
-
-const results = await Promise.all(cursorsToFetch.map(fn => fn()))
-
-export {cursorGen, fetchado}
+export { cursorGen, fetchado }
