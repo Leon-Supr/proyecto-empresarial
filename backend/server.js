@@ -17,12 +17,13 @@ Deno.serve(async (req) => {
     if (url.pathname === "/search") {
         const numCursors = parseInt(url.searchParams.get("num"))
         const cursorArray = cursorGen(numCursors)
+        console.log("Cursors generados:", cursorArray);
 
         const results = await Promise.all(cursorArray.map(cursor => fetchado(cursor)))
         console.log(results)
 
-        return new Response(JSON.stringify(results), {headers})
+        return new Response(JSON.stringify(results), { headers })
     } else {
-        return new Response("Not found", { status: 404, headers})
+        return new Response("Not found", { status: 404, headers })
     }
 })

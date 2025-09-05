@@ -1,5 +1,6 @@
 import React from "react";
 import Pagination from "./components/Pagination";
+import PaginationInput from "./components/PaginationInput";
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
           </ul>
         </nav>
       </header>
-      <Pagination />
+      {/* <Pagination totalPages={3}/> */}
+      <PaginationInput />
     </>
   );
 }

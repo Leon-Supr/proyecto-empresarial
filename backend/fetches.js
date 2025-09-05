@@ -212,4 +212,40 @@ const _pag1d3 = await fetch("https://www.airbnb.mx/api/v3/StaysSearch/9f945886dc
   "method": "POST"
 });
 
-export {_pag1d1, _pag1d2, _pag2d1, _pag2d2, _fetchBusqueda, _pag1d3};
+// 2 adultos, flexible, semana, septiembre octubre noviembre
+const pag1semana = fetch("https://www.airbnb.mx/api/v3/StaysSearch/f0b08e64a95f60a1fc57ae264831e932e6bd4f810b92dd20620449c34a59747b?operationName=StaysSearch&locale=es-419&currency=MXN", {
+  "headers": {
+    "accept": "*/*",
+    "accept-language": "es-419,es;q=0.9",
+    "content-type": "application/json",
+    "ect": "4g",
+    "priority": "u=1, i",
+    "sec-ch-device-memory": "8",
+    "sec-ch-dpr": "2",
+    "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+    "sec-ch-ua-mobile": "?1",
+    "sec-ch-ua-platform": "\"Android\"",
+    "sec-ch-ua-platform-version": "\"6.0\"",
+    "sec-ch-viewport-width": "716",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin",
+    "x-airbnb-api-key": "d306zoyjsyarp7ifhu67rjxn52tv0t20",
+    "x-airbnb-client-trace-id": "0ftb00q0ihfx5j172oz2v0cup9ug",
+    "x-airbnb-graphql-platform": "web",
+    "x-airbnb-graphql-platform-client": "minimalist-niobe",
+    "x-airbnb-network-log-link": "16pestl01f4w2n1meumt61pexwvq",
+    "x-airbnb-supports-airlock-v2": "true",
+    "x-client-request-id": "17s0vyl1esx0hk1etskz20jma3v0",
+    "x-client-version": "7316e3ab573d63dcaae174ef35e0919905acec1d",
+    "x-csrf-token": "",
+    "x-csrf-without-token": "1",
+    "x-niobe-short-circuited": "true",
+    "cookie": "_user_attributes=%7B%22curr%22%3A%22MXN%22%7D; bev=1753935508_EAYzJkZDhmNWI0NG; everest_cookie=1753935508.EAZDAxOWE1ZTE3ZTFjYz.jzjp31VX9B5BM8l8n8Z1wWuu4BdTPTS1nlGQLjerskw; cdn_exp_5e67fe4f6858a3639=treatment; _ccv=cban%3A0_183215%3D1%2C0_200000%3D1%2C0_183345%3D1%2C0_183243%3D1%2C0_183216%3D1%2C0_179751%3D1%2C0_200003%3D1%2C0_200005%3D1%2C0_179754%3D1%2C0_179750%3D1%2C0_179737%3D1%2C0_179744%3D1%2C0_179739%3D1%2C0_179743%3D1%2C0_179749%3D1%2C0_200012%3D1%2C0_200011%3D1%2C0_183217%3D1%2C0_183219%3D1%2C0_183096%3D1%2C0_179747%3D1%2C0_179740%3D1%2C0_179752%3D1%2C0_183241%3D1%2C0_200007%3D1%2C0_183346%3D1%2C0_183095%3D1%2C0_210000%3D1%2C0_210001%3D1%2C0_210002%3D1%2C0_210003%3D1%2C0_210004%3D1%2C0_210010%3D1%2C0_210012%3D1%2C0_210008%3D1%2C0_210016%3D1%2C0_210017%3D1; FPID=FPID2.2.QKmL9rTEoYJqgJkblhxSIOoKLnMde8OZIq%2F%2Bt6OSavk%3D.1753935510; FPAU=1.1.59524152.1753935510; tzo=-360; _gcl_au=1.1.114564323.1753935571; _ga=GA1.1.439162200.1753935572; _scid=3eb31e70-f087-4091-779e-12fcc6d1b67e; _cci=cban%3Aac-eee5f6ac-517d-4b17-803e-fb5b51672c43; previousTab=%7B%22id%22%3A%224c122c16-3bff-4be3-a9aa-0faba41b9850%22%7D; jitney_client_session_id=65c1b052-70b8-477f-861f-d3844d9dd276; jitney_client_session_created_at=1757046337.347; FPLC=O6semuDid2o%2F5f9WCuOhvOE01NrzpaKvZ5OrpAA7qu5KD9UbCuM%2FUXt0PwC85Sk9ZnKkdmDtsXXEe1wiukuTTN2cC26zdQVYwKxnzdKRcJM5dq8i0XQF4V4nVgraBA%3D%3D; FPGSID=1.1757046341.1757046424.G-2P6Q8PGG16.z4wKLVQEvtiFw9FsiCiQfA; cfrmfctr=MOBILE; cbkp=1; frmfctr=compact; ak_bmsc=8F3C105441DC81E3FF4271C4F784717B~000000000000000000000000000000~YAAQxifIF8NQ7/CYAQAA8NYgGB2cr2S3eeGZ5KZbdikUHOzK8RoQrmZ/2FHXgZFb9u/axI59VXnqE24nod1Qn1NVqjtmZsZHuu/KI7tFjtNttbmMzjgTP/MUh0VpU6AmU78w82XtlX82H9rxlzMYEUn4x4yAz5KmnEkCdsldKFVXrQei3weO7Lwltip9f4nqUVUVHH2vB8j1ybaVoFPi6j/gIW2WSb+gvCC0jNbu/gTVXx1UaQxviSMabTTILnpgOh4ClsC2fsgMdXTjPEhIiyAEIGuuBjF/sydq9d5mXRVRId9/NVLbhS1TeSZt45eoBj9E/2Jazl6sM+wiS2S/GmwJ+gDhJ/vNDe0waLo4TjBiCZ/7vmsp8dkmojWDs5wO85GyPPU/OJdHyRFoMIse0Xk3; jitney_client_session_updated_at=1757046427.625; _ga_2P6Q8PGG16=GS2.1.s1757046340$o9$g1$t1757046431$j53$l0$h1411304686; bm_sv=EE5D0865FE47780365A380E1464D5CB1~YAAQ0SfIF/18hNeYAQAAjc0iGB33ePKb0WeCBU9uZGto00MfpvsD4O5Yd+0wZiZfGPlIzsbQGJPZ5e4R56siimbcgrUObYtpZh2rLh9WxPh5u1qdbljvrXt1EiWBNDJeaF71poZlybHLP7l2ihM2oCaR2OfrHP/YRpkP4M4buVgiPReXen86gR8JHKKrHo0gyQr8XPKzqbuHUHR9uiaQLCmd3jrKn54sVP043jQ5VtDiy4TQbltA5vKWt45oAjA0~1",
+    "Referer": "https://www.airbnb.mx/s/Mazatl%C3%A1n--Sin./homes?refinement_paths%5B%5D=%2Fhomes&date_picker_type=flexible_dates&flexible_trip_dates%5B%5D=september&flexible_trip_dates%5B%5D=october&flexible_trip_dates%5B%5D=november&place_id=ChIJwTcYaEFTn4YRsnI88arEpGI&location_bb=QbqKaMLUsEFBuWg5wtT9Aw%3D%3D&acp_id=27420724-758c-42a1-9aa6-da8fe5262924&flexible_trip_lengths%5B%5D=one_week&adults=2&source=structured_search_input_header&search_type=autocomplete_click"
+  },
+  "body": "{\"operationName\":\"StaysSearch\",\"variables\":{\"staysSearchRequest\":{\"metadataOnly\":false,\"requestedPageType\":\"STAYS_SEARCH\",\"searchType\":\"autocomplete_click\",\"source\":\"structured_search_input_header\",\"treatmentFlags\":[\"feed_map_decouple_m11_treatment\",\"recommended_amenities_2024_treatment_b\",\"filter_redesign_2024_treatment\",\"filter_reordering_2024_roomtype_treatment\",\"p2_category_bar_removal_treatment\",\"selected_filters_2024_treatment\",\"recommended_filters_2024_treatment_b\",\"m13_search_input_phase2_treatment\",\"m13_search_input_services_enabled\"],\"maxMapItems\":9999,\"rawParams\":[{\"filterName\":\"acpId\",\"filterValues\":[\"27420724-758c-42a1-9aa6-da8fe5262924\"]},{\"filterName\":\"adults\",\"filterValues\":[\"2\"]},{\"filterName\":\"cdnCacheSafe\",\"filterValues\":[\"false\"]},{\"filterName\":\"datePickerType\",\"filterValues\":[\"flexible_dates\"]},{\"filterName\":\"flexibleTripDates\",\"filterValues\":[\"september\",\"october\",\"november\"]},{\"filterName\":\"flexibleTripLengths\",\"filterValues\":[\"one_week\"]},{\"filterName\":\"itemsPerGrid\",\"filterValues\":[\"18\"]},{\"filterName\":\"placeId\",\"filterValues\":[\"ChIJwTcYaEFTn4YRsnI88arEpGI\"]},{\"filterName\":\"query\",\"filterValues\":[\"Mazatlán, Sin.\"]},{\"filterName\":\"refinementPaths\",\"filterValues\":[\"/homes\"]},{\"filterName\":\"screenSize\",\"filterValues\":[\"small\"]},{\"filterName\":\"tabId\",\"filterValues\":[\"home_tab\"]},{\"filterName\":\"version\",\"filterValues\":[\"1.8.3\"]}]},\"staysMapSearchRequestV2\":{\"metadataOnly\":false,\"requestedPageType\":\"STAYS_SEARCH\",\"searchType\":\"autocomplete_click\",\"source\":\"structured_search_input_header\",\"treatmentFlags\":[\"feed_map_decouple_m11_treatment\",\"recommended_amenities_2024_treatment_b\",\"filter_redesign_2024_treatment\",\"filter_reordering_2024_roomtype_treatment\",\"p2_category_bar_removal_treatment\",\"selected_filters_2024_treatment\",\"recommended_filters_2024_treatment_b\",\"m13_search_input_phase2_treatment\",\"m13_search_input_services_enabled\"],\"rawParams\":[{\"filterName\":\"acpId\",\"filterValues\":[\"27420724-758c-42a1-9aa6-da8fe5262924\"]},{\"filterName\":\"adults\",\"filterValues\":[\"2\"]},{\"filterName\":\"cdnCacheSafe\",\"filterValues\":[\"false\"]},{\"filterName\":\"datePickerType\",\"filterValues\":[\"flexible_dates\"]},{\"filterName\":\"flexibleTripDates\",\"filterValues\":[\"september\",\"october\",\"november\"]},{\"filterName\":\"flexibleTripLengths\",\"filterValues\":[\"one_week\"]},{\"filterName\":\"placeId\",\"filterValues\":[\"ChIJwTcYaEFTn4YRsnI88arEpGI\"]},{\"filterName\":\"query\",\"filterValues\":[\"Mazatlán, Sin.\"]},{\"filterName\":\"refinementPaths\",\"filterValues\":[\"/homes\"]},{\"filterName\":\"screenSize\",\"filterValues\":[\"small\"]},{\"filterName\":\"tabId\",\"filterValues\":[\"home_tab\"]},{\"filterName\":\"version\",\"filterValues\":[\"1.8.3\"]}]},\"isLeanTreatment\":false,\"aiSearchEnabled\":false,\"skipExtendedSearchParams\":false},\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"f0b08e64a95f60a1fc57ae264831e932e6bd4f810b92dd20620449c34a59747b\"}}}",
+  "method": "POST"
+});
+
+export { _pag1d1, _pag1d2, _pag2d1, _pag2d2, _fetchBusqueda, _pag1d3 };
