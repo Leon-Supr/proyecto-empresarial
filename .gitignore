@@ -48,3 +48,5 @@ Thumbs.db
 # Project specific
 # ========================
 backend/response.json   # Archivo generado, no lo subas
+backend/response.json
+backend/response.json
