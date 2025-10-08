@@ -248,4 +248,36 @@ const pag1semana = fetch("https://www.airbnb.mx/api/v3/StaysSearch/f0b08e64a95f6
   "method": "POST"
 });
 
-export { _pag1d1, _pag1d2, _pag2d1, _pag2d2, _fetchBusqueda, _pag1d3 };
+const pag1d3m = fetch("https://www.airbnb.mx/api/v3/StaysSearch/2a2757f965a334843f2d14f392f04e632b66189e4db892c9ca8b181f7614c7ba?operationName=StaysSearch&locale=es-419&currency=MXN", {
+  "headers": {
+    "accept": "*/*",
+    "accept-language": "es-419,es;q=0.9",
+    "content-type": "application/json",
+    "priority": "u=1, i",
+    "sec-ch-ua": "\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Brave\";v=\"140\"",
+    "sec-ch-ua-mobile": "?1",
+    "sec-ch-ua-platform": "\"Android\"",
+    "sec-ch-ua-platform-version": "\"6.0\"",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin",
+    "sec-gpc": "1",
+    "x-airbnb-api-key": "d306zoyjsyarp7ifhu67rjxn52tv0t20",
+    "x-airbnb-client-trace-id": "1cip2gm1miolp503uczue0hdtf5r",
+    "x-airbnb-graphql-platform": "web",
+    "x-airbnb-graphql-platform-client": "minimalist-niobe",
+    "x-airbnb-network-log-link": "150txd90xrkuuh1a0qka210edsa1",
+    "x-airbnb-supports-airlock-v2": "true",
+    "x-client-request-id": "1dd9xc51weyw8l1ujr0mg0hn0e65",
+    "x-client-version": "f813ef27b8627148c5f3542d84c19c6c6c63c917",
+    "x-csrf-token": "",
+    "x-csrf-without-token": "1",
+    "x-niobe-short-circuited": "true",
+    "cookie": "_user_attributes=%7B%22curr%22%3A%22MXN%22%7D; bev=1759202799_EAZjY0MTEyMjUxZW; everest_cookie=1759202799.EAZmU2YTI0M2EzOWRhMm.8HNdEDnF2179YTXkpQlF6tUzWEJphRPM5GQijx4Ewyg; cdn_exp_12abc5c2c444da7a4=control; cdn_exp_d652210e07870cfc3=treatment; previousTab=%7B%22id%22%3A%2240dc67b7-71fa-4619-b7b1-1d8772bb6185%22%7D; jitney_client_session_id=45fa59de-e8ab-4c8c-9b85-57e811697666; jitney_client_session_created_at=1759202802.821; _cci=cban%3Aac-b229cdc3-c2a9-488e-a746-880955bb2f34; tzo=-360; frmfctr=compact; ak_bmsc=7F413AF419ED22AD33466A360E714750~000000000000000000000000000000~YAAQkKPPF1zcm3GZAQAAAEurmB0/xm9bvSHsRa4HiVm9DNPIpK4nUMLY3IHVUDg2Cs2p3Mc/jOk0c5id5QV/JKrpaEmkiCnHgRsnl5dXyZp1Sf1fojsCuo2226Ot2Jcw8fh7YHYoXwoHAsHzDzaArLivVizsd7hKZbCD405NI6hI4aPKXhsRv/KbgqhoeuZsXVf79vgQpQBPtwK6g+j2vl1uzu3aqnBSJ/24JNuWBdBhUTagwz0+uCv+n0zs0AsLNxpSE5442YPvBkvGd1KLTmqRoshbGH04lZPOYSesy3Qk+5Q7XtxylyYPCFZhJo07y2ih04ZN/LhuoK7lvk7dGRmw2gEdLIgviK6zzQTSVEVzBlNP4QMSvMJHCYub/rzKdmFTQp7xPj+9JwZsFV/gx4DOq/ZfLBBha+t89NESA+vEnWbBWiNa6q69pRZpW56myIBI; cfrmfctr=DESKTOP; cbkp=4; _ccv=cban%3A0_183215%3D1%2C0_200000%3D1%2C0_183345%3D1%2C0_183243%3D1%2C0_183216%3D1%2C0_179751%3D1%2C0_200003%3D1%2C0_200005%3D1%2C0_183219%3D1%2C0_179747%3D1%2C0_183241%3D1%2C0_200007%3D1%2C0_210000%3D1%2C0_210001%3D1%2C0_210002%3D1%2C0_210003%3D1%2C0_210004%3D1%2C0_210010%3D1%2C0_210012%3D1%2C0_210008%3D1%2C0_210017%3D1%2C0_179754%3D0%2C0_179750%3D0%2C0_179737%3D0%2C0_179744%3D0%2C0_179739%3D0%2C0_179743%3D0%2C0_179749%3D0%2C0_200012%3D0%2C0_200011%3D0%2C0_183217%3D0%2C0_183096%3D0%2C0_179740%3D0%2C0_179752%3D0%2C0_183346%3D0%2C0_183095%3D0%2C0_210016%3D0%2C0_210018%3D0%2C0_210020%3D0%2C0_210021%3D0%23gpc%3A1; jitney_client_session_updated_at=1759203193.978; bm_sv=E37907FB57F135142CE6B568E5A80C27~YAAQjaPPF0TnOJaZAQAASxavmB3MChocyfzPVWSBI23bjTp/v2pRY+iYoT4VfmcyAYv43jUzXCAL8+0yzyQ2SEj9hUS7EiVUcO7h5way+9tF38k3yVZHFLU7g2fqITAwgI9o9F5Px8/ZTia3Vn8P9/qPm4TXwE9r3+ZNePdTTB8IF2Yy7IEtIEN1IRHhBBAe/4whIwMEtOVAK30a4HFnO9mOypabh6cKF7eJeBTHzLORyWFU1zwAyxjMQwoFDo4f~1",
+    "Referer": "https://www.airbnb.mx/s/Mazatl%C3%A1n--Sinaloa/homes?refinement_paths%5B%5D=%2Fhomes&place_id=ChIJwTcYaEFTn4YRsnI88arEpGI&date_picker_type=flexible_dates&flexible_trip_lengths%5B%5D=one_week&flexible_trip_dates%5B%5D=december&flexible_trip_dates%5B%5D=january&flexible_trip_dates%5B%5D=november&adults=2&source=structured_search_input_header&search_type=AUTOSUGGEST"
+  },
+  "body": "{\"operationName\":\"StaysSearch\",\"variables\":{\"staysSearchRequest\":{\"metadataOnly\":false,\"requestedPageType\":\"STAYS_SEARCH\",\"searchType\":\"AUTOSUGGEST\",\"source\":\"structured_search_input_header\",\"treatmentFlags\":[\"feed_map_decouple_m11_treatment\",\"recommended_amenities_2024_treatment_b\",\"filter_redesign_2024_treatment\",\"filter_reordering_2024_roomtype_treatment\",\"p2_category_bar_removal_treatment\",\"selected_filters_2024_treatment\",\"recommended_filters_2024_treatment_b\",\"m13_search_input_phase2_treatment\",\"m13_search_input_services_enabled\"],\"maxMapItems\":9999,\"rawParams\":[{\"filterName\":\"adults\",\"filterValues\":[\"2\"]},{\"filterName\":\"cdnCacheSafe\",\"filterValues\":[\"false\"]},{\"filterName\":\"datePickerType\",\"filterValues\":[\"flexible_dates\"]},{\"filterName\":\"flexibleTripDates\",\"filterValues\":[\"december\",\"january\",\"november\"]},{\"filterName\":\"flexibleTripLengths\",\"filterValues\":[\"one_week\"]},{\"filterName\":\"itemsPerGrid\",\"filterValues\":[\"18\"]},{\"filterName\":\"placeId\",\"filterValues\":[\"ChIJwTcYaEFTn4YRsnI88arEpGI\"]},{\"filterName\":\"query\",\"filterValues\":[\"Mazatlán, Sinaloa\"]},{\"filterName\":\"refinementPaths\",\"filterValues\":[\"/homes\"]},{\"filterName\":\"screenSize\",\"filterValues\":[\"small\"]},{\"filterName\":\"tabId\",\"filterValues\":[\"home_tab\"]},{\"filterName\":\"version\",\"filterValues\":[\"1.8.3\"]}]},\"staysMapSearchRequestV2\":{\"metadataOnly\":false,\"requestedPageType\":\"STAYS_SEARCH\",\"searchType\":\"AUTOSUGGEST\",\"source\":\"structured_search_input_header\",\"treatmentFlags\":[\"feed_map_decouple_m11_treatment\",\"recommended_amenities_2024_treatment_b\",\"filter_redesign_2024_treatment\",\"filter_reordering_2024_roomtype_treatment\",\"p2_category_bar_removal_treatment\",\"selected_filters_2024_treatment\",\"recommended_filters_2024_treatment_b\",\"m13_search_input_phase2_treatment\",\"m13_search_input_services_enabled\"],\"rawParams\":[{\"filterName\":\"adults\",\"filterValues\":[\"2\"]},{\"filterName\":\"cdnCacheSafe\",\"filterValues\":[\"false\"]},{\"filterName\":\"datePickerType\",\"filterValues\":[\"flexible_dates\"]},{\"filterName\":\"flexibleTripDates\",\"filterValues\":[\"december\",\"january\",\"november\"]},{\"filterName\":\"flexibleTripLengths\",\"filterValues\":[\"one_week\"]},{\"filterName\":\"placeId\",\"filterValues\":[\"ChIJwTcYaEFTn4YRsnI88arEpGI\"]},{\"filterName\":\"query\",\"filterValues\":[\"Mazatlán, Sinaloa\"]},{\"filterName\":\"refinementPaths\",\"filterValues\":[\"/homes\"]},{\"filterName\":\"screenSize\",\"filterValues\":[\"small\"]},{\"filterName\":\"tabId\",\"filterValues\":[\"home_tab\"]},{\"filterName\":\"version\",\"filterValues\":[\"1.8.3\"]}]},\"isLeanTreatment\":false,\"aiSearchEnabled\":false,\"skipExtendedSearchParams\":false},\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"2a2757f965a334843f2d14f392f04e632b66189e4db892c9ca8b181f7614c7ba\"}}}",
+  "method": "POST"
+});
+
+export { _pag1d1, _pag1d2, _pag2d1, _pag2d2, _fetchBusqueda, _pag1d3, pag1d3m };
