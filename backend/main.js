@@ -93,20 +93,6 @@ async function fetchado(inputCursor) { // Es la función principal, con esta se 
   const data = await res.json();
   const publicaciones = data.data.presentation.staysSearch.results.searchResults;
 
-  // Price: publicaciones[key].structuredDisplayPrice.primaryLine.originalPrice // discountedPrice
-  // Si solo tiene un precio aparece como ...primaryLine.price
-  // Formato string = "$4,131 MXN"
-
-  // const price = 0;
-  // const priceRoute = publicaciones[key].structuredDisplayPrice.primaryLine;
-  // if (priceRoute.discountedPrice) {
-  //   price = parseInt(priceRoute.discountedPrice.replace(/[^\d]/g, ""), 10); // Si hay precio con descuento
-  // } else if (priceRoute.price) {
-  //   price = parseInt(priceRoute.price.replace(/[^\d]/g, ""), 10); // Si es precio normal
-  // } else {
-  //   console.log("No hubo precio")
-  // }
-
   const pagina = [];
   const decodedIdsArray = [];
 
@@ -128,9 +114,14 @@ async function fetchado(inputCursor) { // Es la función principal, con esta se 
         console.log("No hubo precio para " + nombrePublicacion);
       }
 
-      console.log(`${key} -> ${nombrePublicacion} --> ${decodedId} --> ${price}`);
+      const nights = parseInt(priceRoute.qualifier.match(/\d+/)[0]); // Encuentra el número en el texto de "por X noches"
+      const pricePerNight = price / nights
 
-      pagina.push({ nombrePublicacion, decodedId, price });
+      const postUrl = `https://www.airbnb.mx/rooms/${decodedId}`
+
+      console.log(`${key} -> ${nombrePublicacion} --> $${pricePerNight} por noche --> ${postUrl}`);
+
+      pagina.push({ nombrePublicacion, decodedId, pricePerNight, postUrl }); // Estos son los datos que se pasarán a results en el frontend
     }
   }
 

@@ -11,7 +11,7 @@ const PaginationResult = ({ page, pageIndex }) => {
                 <ol className="list-decimal">
                     {page.map((item, itemIndex) => (
                         <li key={itemIndex}>
-                            {item.nombrePublicacion} → {item.decodedId} → Precio: ${item.price} mxn
+                            {item.nombrePublicacion} → Precio: ${item.pricePerNight} mxn → <a href={item.postUrl}>Ver publicación</a>
                         </li>
                     ))}
                 </ol>

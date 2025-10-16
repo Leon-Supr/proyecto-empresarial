@@ -5,7 +5,7 @@ import PaginationInput from "./components/PaginationInput";
 function App() {
   return (
     <>
-      <header>
+      <header className="bg-primary text-white p-4">
         <nav style={{ display: "flex", justifyContent: "space-between" }}>
           <p>Logo</p>
           <ul style={{ display: "flex", gap: "1rem", listStyle: "none" }}>
@@ -18,7 +18,6 @@ function App() {
           </ul>
         </nav>
       </header>
-      {/* <Pagination totalPages={3}/> */}
       <PaginationInput />
     </>
   );

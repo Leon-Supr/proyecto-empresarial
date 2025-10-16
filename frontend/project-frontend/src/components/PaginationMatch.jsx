@@ -4,7 +4,7 @@ const PaginationMatch = ({ nombre, page, pos, matchIndex }) => {
     return (
         <>
             <div
-                className="container flex flex-col items-center"
+                className="container flex flex-col items-right"
                 key={matchIndex}
             >
                 <h3>
